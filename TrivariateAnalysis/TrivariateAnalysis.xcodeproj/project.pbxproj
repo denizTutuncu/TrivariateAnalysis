@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2EEDFEA426ED8043001ABD53 /* TrivariateAnalysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEDFE9A26ED8043001ABD53 /* TrivariateAnalysis.framework */; };
 		2EEDFEA926ED8043001ABD53 /* TrivariateAnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEDFEA826ED8043001ABD53 /* TrivariateAnalysisTests.swift */; };
-		2EEDFEAB26ED8043001ABD53 /* TrivariateAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EEDFE9D26ED8043001ABD53 /* TrivariateAnalysis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		2EEDFE9A26ED8043001ABD53 /* TrivariateAnalysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrivariateAnalysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EEDFE9D26ED8043001ABD53 /* TrivariateAnalysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrivariateAnalysis.h; sourceTree = "<group>"; };
 		2EEDFE9E26ED8043001ABD53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EEDFEA326ED8043001ABD53 /* TrivariateAnalysisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrivariateAnalysisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEDFEA826ED8043001ABD53 /* TrivariateAnalysisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrivariateAnalysisTests.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 		2EEDFE9C26ED8043001ABD53 /* TrivariateAnalysis */ = {
 			isa = PBXGroup;
 			children = (
-				2EEDFE9D26ED8043001ABD53 /* TrivariateAnalysis.h */,
 				2EEDFE9E26ED8043001ABD53 /* Info.plist */,
 			);
 			path = TrivariateAnalysis;
@@ -93,7 +90,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EEDFEAB26ED8043001ABD53 /* TrivariateAnalysis.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
