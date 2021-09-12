@@ -17,7 +17,22 @@ final class EstimationEngine: ExpectedDurationCalculation {
     
     private init() {}
     
-    static func calculateExpectedDuration() -> ExpectedDurationCalculation.Result {
+    enum Error: Swift.Error, LocalizedError {
+        case needsThreeEstimates
+        
+        var errorDescription: String? {
+            switch self {
+            case .needsThreeEstimates:
+                return NSLocalizedString("This func needs three estimates to calculate.", comment: "Error.needsThreeEstimates")
+            }
+        }
+    }
+    
+    static func calculateExpectedDuration(_ estimates: [Double]) -> ExpectedDurationCalculation.Result {
+        if let error = handleEstimatesCount(estimates) {
+            return Result { throw error }
+        }
+        
         return Result { 0 }
     }
     
