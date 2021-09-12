@@ -13,8 +13,6 @@ protocol ExpectedDurationCalculation {
 }
 
 final class EstimationEngine: ExpectedDurationCalculation {
-    
-    
     private init() {}
     
     enum Error: Swift.Error, LocalizedError {
@@ -42,6 +40,18 @@ final class EstimationEngine: ExpectedDurationCalculation {
 }
 
 class TrivariateAnalysisTests: XCTestCase {
+    
+    func test_calculateExpectedDuration_failsWithError_WhenGivenDataIsMissing() {
+        let missingData: [Double] = [1.0, 3.0]
+        let result = EstimationEngine.calculateExpectedDuration(missingData)
+        
+        switch result {
+        case let .failure(error):
+            XCTAssertNotNil(error)
+        case .success:
+            XCTFail("Expected to fail")
+        }
+    }
     
     func test_calculateExpectedDuration_failsWithError_WhenGivenDataIsEmpty() {
         let emptyData: [Double] = []
