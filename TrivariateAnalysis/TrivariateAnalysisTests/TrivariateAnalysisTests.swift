@@ -17,11 +17,14 @@ final class EstimationEngine: ExpectedDurationCalculation {
     
     enum Error: Swift.Error, LocalizedError {
         case needsThreeEstimates
+        case invalidValue
         
         var errorDescription: String? {
             switch self {
             case .needsThreeEstimates:
                 return NSLocalizedString("This func needs three estimates to calculate.", comment: "Error.needsThreeEstimates")
+            case .invalidValue:
+                return NSLocalizedString("One or more invalid values in the estimation array.", comment: "Error.invalidValue")
             }
         }
     }
