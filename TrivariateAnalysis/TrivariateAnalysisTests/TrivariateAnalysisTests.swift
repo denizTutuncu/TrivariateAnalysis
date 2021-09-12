@@ -8,11 +8,11 @@
 import XCTest
 
 protocol ExpectedDurationCalculation {
-    static func calculateExpectedDuration() -> Double
+    typealias Result = Swift.Result<Double, Error>
+    static func calculateExpectedDuration() -> Result
 }
 
 final class EstimationEngine: ExpectedDurationCalculation {
-    
     private init() {}
     
     static func calculateExpectedDuration() -> Double {
