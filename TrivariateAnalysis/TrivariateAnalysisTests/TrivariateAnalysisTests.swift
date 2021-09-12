@@ -41,6 +41,18 @@ final class EstimationEngine: ExpectedDurationCalculation {
 
 class TrivariateAnalysisTests: XCTestCase {
     
+    func test_calculateExpectedDuration_failsWithError_WhenGivenDataIsInvalid_CaseMoreItems() {
+        let invalidData = [1.0, 3.0, 12.0, 14.0]
+        let result = EstimationEngine.calculateExpectedDuration(invalidData)
+        
+        switch result {
+        case let .failure(error):
+            XCTAssertNotNil(error)
+        case .success:
+            XCTFail("Expected to fail")
+        }
+    }
+    
     func test_calculateExpectedDuration_failsWithError_WhenGivenDataIsInvalid_CaseLessItems() {
         let missingData: [Double] = [1.0, 3.0]
         let result = EstimationEngine.calculateExpectedDuration(missingData)
