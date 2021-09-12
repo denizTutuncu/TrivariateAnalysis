@@ -13,6 +13,8 @@ protocol ExpectedDurationCalculation {
 }
 
 final class EstimationEngine: ExpectedDurationCalculation {
+    
+    
     private init() {}
     
     static func calculateExpectedDuration() -> ExpectedDurationCalculation.Result {
@@ -22,14 +24,15 @@ final class EstimationEngine: ExpectedDurationCalculation {
 
 class TrivariateAnalysisTests: XCTestCase {
     
-    func test_calculateExpectedDuration_returnsZero() {
-        let result = EstimationEngine.calculateExpectedDuration()
+    func test_calculateExpectedDuration_failsWithError_WhenGivenDataIsEmpty() {
+        let emptyData: [Double] = []
+        let result = EstimationEngine.calculateExpectedDuration(emptyData)
         
         switch result {
-        case .failure:
+        case let .failure(error):
+            XCTAssertNotNil(error)
+        case .success:
             XCTFail("Expected to fail")
-        case let .success(value):
-            XCTAssertEqual(value, 0)
         }
     }
 }
