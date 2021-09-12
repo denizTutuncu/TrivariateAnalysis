@@ -38,8 +38,17 @@ final class EstimationEngine: ExpectedDurationCalculation {
             return Result { throw err }
         }
         
-        return Result { 0 }
+        return Result { calculate(estimates) }
     }
+    
+    static private func calculate(_ estimates: [Double]) -> Double {
+        let optimisticEstimate = estimates[0]
+        let nominalEstimate = estimates[1]
+        let pessimisticEstimate = estimates[2]
+        
+        return (optimisticEstimate + ( 4 * nominalEstimate) + pessimisticEstimate) / 6
+    }
+    
     
     static private func handleEstimatesCount(_ estimates: [Double]) -> Error? {
         guard estimates.count == 3 else { return Error.needsThreeEstimates }; return nil
