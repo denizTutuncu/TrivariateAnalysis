@@ -34,6 +34,10 @@ final class EstimationEngine: ExpectedDurationCalculation {
             return Result { throw error }
         }
         
+        if let err = handleInvalidValues(estimates) {
+            return Result { throw err }
+        }
+        
         return Result { 0 }
     }
     
