@@ -40,6 +40,15 @@ final class EstimationEngine: ExpectedDurationCalculation {
     static private func handleEstimatesCount(_ estimates: [Double]) -> Error? {
         guard estimates.count == 3 else { return Error.needsThreeEstimates }; return nil
     }
+    
+    static private func handleInvalidValues(_ estimates: [Double]) -> Error? {
+        for estimate in estimates {
+            if estimate <= 0 {
+                return Error.invalidValue
+            }
+        }
+        return nil
+    }
 }
 
 class TrivariateAnalysisTests: XCTestCase {
