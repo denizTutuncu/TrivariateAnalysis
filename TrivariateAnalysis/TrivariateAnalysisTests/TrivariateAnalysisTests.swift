@@ -10,18 +10,6 @@ import TrivariateAnalysis
 
 class TrivariateAnalysisTests: XCTestCase {
     
-//    func test_calculateExpectedDuration_WhenGivenDataIsInvalid_CaseInvalidItem_ErrorDescription() {
-//        let invalidData = [-1.0, 3.0, 12.0]
-//        let result = EstimationEngine.calculateExpectedDuration(invalidData)
-//
-//        switch result {
-//        case let .failure(error):
-//            XCTAssertEqual(error.localizedDescription, "One or more invalid values in the estimation array.")
-//        case .success:
-//            XCTFail("Expected to fail")
-//        }
-//    }
-    
     func test_calculateExpectedDuration_successfullyReturnsData_WhenGivenDataIsValid() {
         let validData = [1.0, 3.0, 12.0]
         let result = EstimationEngine.calculateExpectedDuration(validData)
