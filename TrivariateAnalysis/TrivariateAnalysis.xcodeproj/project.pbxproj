@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2EEDFEA426ED8043001ABD53 /* TrivariateAnalysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEDFE9A26ED8043001ABD53 /* TrivariateAnalysis.framework */; };
 		2EEDFEA926ED8043001ABD53 /* TrivariateAnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEDFEA826ED8043001ABD53 /* TrivariateAnalysisTests.swift */; };
+		2EEDFEB726EEC6C0001ABD53 /* ExpectedDurationCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEDFEB626EEC6C0001ABD53 /* ExpectedDurationCalculation.swift */; };
+		2EEDFEB926EEC6F3001ABD53 /* EstimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEDFEB826EEC6F3001ABD53 /* EstimationEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		2EEDFEA326ED8043001ABD53 /* TrivariateAnalysisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrivariateAnalysisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEDFEA826ED8043001ABD53 /* TrivariateAnalysisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrivariateAnalysisTests.swift; sourceTree = "<group>"; };
 		2EEDFEAA26ED8043001ABD53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EEDFEB626EEC6C0001ABD53 /* ExpectedDurationCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedDurationCalculation.swift; sourceTree = "<group>"; };
+		2EEDFEB826EEC6F3001ABD53 /* EstimationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimationEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		2EEDFE9C26ED8043001ABD53 /* TrivariateAnalysis */ = {
 			isa = PBXGroup;
 			children = (
+				2EEDFEB426EEC663001ABD53 /* Estimation */,
 				2EEDFE9E26ED8043001ABD53 /* Info.plist */,
 			);
 			path = TrivariateAnalysis;
@@ -81,6 +86,23 @@
 				2EEDFEAA26ED8043001ABD53 /* Info.plist */,
 			);
 			path = TrivariateAnalysisTests;
+			sourceTree = "<group>";
+		};
+		2EEDFEB426EEC663001ABD53 /* Estimation */ = {
+			isa = PBXGroup;
+			children = (
+				2EEDFEB526EEC672001ABD53 /* ExpectedDuration */,
+			);
+			path = Estimation;
+			sourceTree = "<group>";
+		};
+		2EEDFEB526EEC672001ABD53 /* ExpectedDuration */ = {
+			isa = PBXGroup;
+			children = (
+				2EEDFEB626EEC6C0001ABD53 /* ExpectedDurationCalculation.swift */,
+				2EEDFEB826EEC6F3001ABD53 /* EstimationEngine.swift */,
+			);
+			path = ExpectedDuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +165,7 @@
 				TargetAttributes = {
 					2EEDFE9926ED8043001ABD53 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					2EEDFEA226ED8043001ABD53 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -190,6 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EEDFEB926EEC6F3001ABD53 /* EstimationEngine.swift in Sources */,
+				2EEDFEB726EEC6C0001ABD53 /* ExpectedDurationCalculation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +361,7 @@
 		2EEDFEAF26ED8043001ABD53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -353,6 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.TrivariateAnalysis;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -360,6 +387,7 @@
 		2EEDFEB026ED8043001ABD53 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -384,6 +412,7 @@
 		2EEDFEB226ED8043001ABD53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9DGMQB3935;
@@ -402,6 +431,7 @@
 		2EEDFEB326ED8043001ABD53 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9DGMQB3935;
